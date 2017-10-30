@@ -21,4 +21,14 @@ ListNode* ReverseList(ListNode* pHead)
 	return pReverseHead;
 }
 
-//递归事先
+//***递归实现***
+ListNode* ReverseList(ListNode* pHead)
+{
+	//specical case
+	if (pHead == nullptr || pHead->next == nullptr)
+		return pHead;
+	ListNode* pReverseHead = ReverseList(pHead->next);
+	head->next->next = head;
+	head->next = nullptr;
+	return pReverseHead;
+}
